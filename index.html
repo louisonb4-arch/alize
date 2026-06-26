@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M'Alizé — Pêche artisanale · Côte d'Albâtre</title>
+  <meta name="description" content="M'Alizé, pêche artisanale en Côte d'Albâtre. Bulots vivants, bouquets et poissons de saison, pêchés et vendus à quai. Dieppe · Fécamp · Saint-Valéry-en-Caux selon arrivages." />
+  <meta name="theme-color" content="#021e29" />
+  <meta property="og:title" content="M'Alizé — La mer décide" />
+  <meta property="og:description" content="Pêche artisanale en Côte d'Albâtre. Pêchés ici, vendus ici, pour vous." />
+  <meta property="og:image" content="img/hero.png" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="shell">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="accueil">
+    <div class="hero-bar">
+      <a class="brand" href="#accueil" aria-label="M'Alizé, accueil">
+        <span class="brand-name">M'Alizé</span>
+        <span class="brand-sub">PÊCHE ARTISANALE</span>
+        <span class="brand-anchor" aria-hidden="true">⚓</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="#histoire">LE BATEAU</a>
+        <a href="#produits">NOS PRODUITS</a>
+        <a href="#vente">VENTE À QUAI</a>
+        <a href="#localisation">OÙ NOUS TROUVER</a>
+        <a href="#localisation">CONTACT</a>
+      </nav>
+
+      <a href="#" class="cta-fb" data-facebook>
+        <span>SUIVRE LES ARRIVAGES<br>SUR FACEBOOK</span><span class="cta-fb-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="hero-head">
+      <h1 class="hero-title">LA MER<br>DECIDE<span class="dot">.</span></h1>
+      <div class="hero-script">Nous, on pêche.</div>
+      <div class="hero-kicker">PÊCHE ARTISANALE EN CÔTE D'ALBÂTRE</div>
+      <div class="hero-ports">Dieppe · Fécamp · Saint-Valéry-en-Caux<br>selon arrivages</div>
+    </div>
+
+    <div class="hero-badge" aria-hidden="true">
+      <svg viewBox="0 0 118 118"><defs><path id="circ" d="M59,59 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"></path></defs>
+        <text font-family="Oswald" font-size="11.5" letter-spacing="2.5" fill="#e9e4d8"><textPath href="#circ" startOffset="0%">CIRCUIT COURT · ULTRA FRAIS · </textPath></text>
+      </svg>
+      <span class="hero-badge-100">100%</span>
+    </div>
+
+    <div class="hero-scroll-num" aria-hidden="true">01</div>
+    <div class="hero-scroll-track" aria-hidden="true"><span class="hero-scroll-line"></span><span class="hero-scroll-dot"></span></div>
+    <div class="hero-scroll-word" aria-hidden="true">SCROLL</div>
+  </header>
+
+  <!-- ============ VENTE À QUAI ============ -->
+  <section class="quay" id="vente">
+    <div class="quay-text">
+      <div class="label">VENTE À QUAI</div>
+      <h2 class="quay-title">Pas d'horaires fixes.<span class="quay-title-accent">La mer donne le rythme.</span></h2>
+      <p class="quay-p">Les ventes dépendent des <strong>marées</strong>, de la <strong>météo</strong> et des <strong>retours de pêche</strong>. Pour ne rien manquer, suivez nos arrivages sur Facebook.</p>
+      <a href="#" class="btn-outline" data-facebook>VOIR LES PROCHAINES VENTES <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="quay-media" role="img" aria-label="Pêcheur tenant un panier de bulots fraîchement pêchés, dans le port de Dieppe">
+      <div class="quay-script">
+        <div class="quay-script-kicker">Circuit court</div>
+        <div class="quay-script-main">Pêchés ici.<br>Vendus ici.<br><span class="gold">Pour vous.</span></div>
+        <svg class="quay-underline" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M5,12 C70,4 150,17 220,8 C255,4 285,12 296,7" fill="none" stroke="#f0b03a" stroke-width="5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NOS PRODUITS ============ -->
+  <section class="prod" id="produits">
+    <div class="prod-intro">
+      <div class="prod-nos">Nos</div>
+      <h2 class="prod-title">PRODUITS</h2>
+      <div class="prod-rule"></div>
+      <p class="prod-p">Pêche artisanale au casier au large de Dieppe. Chaque jour, une pêche différente, des produits ultra-frais, souvent encore vivants, sélectionnés avec exigence.</p>
+      <button class="link-line prod-toggle" id="prod-toggle" aria-expanded="false" aria-controls="prod-more">EN SAVOIR PLUS SUR NOS PRODUITS <span class="teal prod-toggle-ico" aria-hidden="true">+</span></button>
+    </div>
+    <div class="prod-cards">
+      <article class="pcard">
+        <img src="img/p_35_3.png" alt="Bulots vivants en gros plan" class="pcard-img" />
+        <div class="pcard-grad"></div>
+        <div class="pcard-body">
+          <div class="pcard-title">BULOTS<br>VIVANTS</div>
+          <div class="pcard-sub">Petits &amp; moyens</div>
+          <span class="pcard-plus" aria-hidden="true">+</span>
+        </div>
+      </article>
+      <article class="pcard">
+        <img src="img/p_35_4.png" alt="Bouquets, crevettes roses" class="pcard-img" />
+        <div class="pcard-grad"></div>
+        <div class="pcard-body">
+          <div class="pcard-title">BOUQUETS<br>VIVANTS</div>
+          <div class="pcard-sub">Crevettes roses</div>
+          <span class="pcard-plus" aria-hidden="true">+</span>
+        </div>
+      </article>
+      <article class="pcard">
+        <img src="img/p_35_5.png" alt="Poissons de saison sur glace" class="pcard-img" />
+        <div class="pcard-grad"></div>
+        <div class="pcard-body">
+          <div class="pcard-title">POISSONS<br>DE SAISON</div>
+          <div class="pcard-sub">Seiches &amp; arrivages</div>
+          <span class="pcard-plus" aria-hidden="true">+</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- En savoir plus : panneau dépliable -->
+    <div class="prod-more" id="prod-more" hidden>
+      <div class="pm-col">
+        <h3 class="pm-h">La pêche au casier</h3>
+        <p class="pm-p">Le M'Alizé pratique la pêche artisanale au casier au large de Dieppe. Posés sur le fond et garnis d'un appât — la « boëtte » —, les casiers attirent bulots et crustacés sans abîmer les fonds. Une méthode sélective : seules les belles pièces sont gardées, le reste retourne à l'eau. Taille minimale du bulot : 4,5 cm ; la ressource est encadrée (quotas, nombre de casiers et de jours en mer).</p>
+      </div>
+      <div class="pm-col">
+        <h3 class="pm-h">Notre pêche</h3>
+        <ul class="pm-list">
+          <li><strong>Bulots vivants</strong> — le produit phare, beaux et bons, petits ou moyens.</li>
+          <li><strong>Homards bleus</strong> — pêchés localement au casier.</li>
+          <li><strong>Bouquets vivants</strong> — crevettes roses et grises de la Manche.</li>
+          <li><strong>Seiches</strong> — selon la saison.</li>
+        </ul>
+      </div>
+      <div class="pm-col">
+        <h3 class="pm-h">En complément, sur commande</h3>
+        <ul class="pm-list">
+          <li><strong>Moules de bouchot</strong> — du Crotoy, en Baie de Somme.</li>
+          <li><strong>Dos de cabillaud</strong> — frais.</li>
+          <li><strong>Crevettes roses</strong> — cuites ou fraîches selon arrivage.</li>
+        </ul>
+        <p class="pm-note">Produits de partenaires locaux, proposés pour la livraison.</p>
+      </div>
+      <div class="pm-col">
+        <h3 class="pm-h">Où &amp; comment acheter</h3>
+        <p class="pm-p">Vente directe à quai à Dieppe, secteur « Les Barrières », au retour de pêche — selon la météo et les arrivages. Livraison possible sur commande (tournées).</p>
+        <p class="pm-p">Infos &amp; commandes : <a href="tel:+33622135713" class="pm-link">06 22 13 57 13</a> ou message sur la page Facebook.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HISTOIRE ============ -->
+  <section class="story" id="histoire">
+    <div class="story-portrait" role="img" aria-label="Jérôme Féron, patron-pêcheur du M'Alizé"></div>
+    <div class="story-text">
+      <div class="story-script">L'histoire</div>
+      <h2 class="story-title">D'UNE PASSION</h2>
+      <p class="story-p">Jérôme Féron, patron-pêcheur, une vie en mer, un bateau construit pour durer et une aventure familiale et locale.</p>
+      <button class="link-arrow story-toggle" id="story-toggle" aria-expanded="false" aria-controls="story-more"><span>DÉCOUVRIR NOTRE HISTOIRE</span><span class="story-toggle-ico" aria-hidden="true">↓</span></button>
+    </div>
+    <div class="story-side">
+      <div class="story-photo" role="img" aria-label="Le M'Alizé au coucher du soleil"></div>
+    </div>
+  </section>
+
+  <!-- Découvrir notre histoire : panneau dépliable -->
+  <section class="story-more" id="story-more" hidden aria-label="Le parcours de Jérôme Féron">
+    <div class="sm-inner">
+      <div class="sm-lead">
+        <div class="sm-kicker">Le parcours de Jérôme Féron</div>
+        <p class="sm-text">Originaire de la Manche, Jérôme Féron commence la pêche à 20 ans. Matelot puis patron à Pirou et Agon-Coutainville, il rejoint Dieppe en 2007 et s'installe à son compte en mai 2008. Il rachète alors le navire de son ancien armateur, qu'il rebaptise <strong>le Stélorient</strong>, et le mène une dizaine d'années sur les bancs à bulots.</p>
+        <p class="sm-text">Avec un permis de mise en exploitation, il fait concevoir un navire neuf, sur mesure : <strong>le M'Alizé</strong>, pensé plus confortable, plus ergonomique et plus sûr pour le patron et son matelot.</p>
+        <p class="sm-text sm-quote">« M'Alizé » est un clin d'œil à <strong>Alizée</strong>, la dernière fille de Jérôme et de son épouse <strong>Marine</strong>, qui veille à la logistique commerciale. Une affaire de famille, locale et indépendante.</p>
+      </div>
+
+      <ol class="sm-timeline">
+        <li><span class="sm-year">20 ans</span><div class="sm-step"><strong>Premiers pas en mer</strong><span>Débuts à la pêche, en Manche.</span></div></li>
+        <li><span class="sm-year">2007</span><div class="sm-step"><strong>Arrivée à Dieppe</strong><span>Après Pirou et Agon-Coutainville.</span></div></li>
+        <li><span class="sm-year">Mai 2008</span><div class="sm-step"><strong>À son compte</strong><span>Rachat et rebaptême du navire en « Stélorient ».</span></div></li>
+        <li><span class="sm-year">1ᵉʳ avril 2019</span><div class="sm-step"><strong>Mise à l'eau du M'Alizé</strong><span>Aluminium, chantier de Longueville — 10,50 m × 4,20 m.</span></div></li>
+        <li><span class="sm-year">2021</span><div class="sm-step"><strong>Cap sur le M'Alizé</strong><span>Cession du Stélorient ; l'activité se recentre sur un seul bateau.</span></div></li>
+        <li><span class="sm-year">Aujourd'hui</span><div class="sm-step"><strong>Pêche au casier &amp; circuit court</strong><span>Bulots, homards, bouquets, seiches — vendus à quai et en livraison. Une communauté de plusieurs milliers de personnes suit les sorties et les arrivages.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ LOCALISATION (Côte d'Albâtre) ============ -->
+  <section class="coast" id="localisation">
+    <img src="img/coast_bg2.png" alt="Vue aérienne de la Côte d'Albâtre" class="coast-bg" />
+
+    <svg class="coast-route" viewBox="0 0 1847 761" preserveAspectRatio="none" aria-hidden="true">
+      <polyline points="150,655 610,575 1112,347" fill="none" stroke="#e8a830" stroke-width="2.4" stroke-dasharray="3 14" stroke-linecap="round"></polyline>
+    </svg>
+
+    <div class="coast-head">
+      <div class="coast-script">La côte d'Albâtre.</div>
+      <h2 class="coast-title">UN LITTORAL D'EXCEPTION</h2>
+      <p class="coast-p">De Fécamp à Dieppe, en passant par Saint-Valéry-en-Caux, la Côte d'Albâtre dévoile des paysages spectaculaires, des ports de caractère et un savoir-faire unique.</p>
+    </div>
+
+    <!-- Fécamp -->
+    <div class="pin pin-fecamp" aria-hidden="true"><span class="pin-drop"></span><span class="pin-dot"></span></div>
+    <div class="pin-ring pin-ring-fecamp" aria-hidden="true"></div>
+    <div class="port port-fecamp">Fécamp<span class="port-underline"></span></div>
+
+    <!-- Saint-Valéry-en-Caux -->
+    <div class="pin pin-sv" aria-hidden="true"><span class="pin-drop"></span><span class="pin-dot"></span></div>
+    <div class="pin-ring pin-ring-sv" aria-hidden="true"></div>
+    <div class="port port-sv">Saint-Valéry-<br>en-Caux<span class="port-underline center"></span></div>
+
+    <!-- Dieppe -->
+    <div class="pin pin-dieppe" aria-hidden="true"><span class="pin-drop big"></span><span class="pin-dot big"></span></div>
+    <div class="pin-ring pin-ring-dieppe" aria-hidden="true"></div>
+    <div class="port port-dieppe white">Dieppe<span class="port-underline"></span></div>
+
+    <!-- follow -->
+    <div class="coast-follow">
+      <div class="follow-title">NOUS <span class="gold">SUIVRE,</span><br>C'EST NE <span class="gold">RIEN</span> MANQUER.</div>
+      <p class="follow-p">Port du jour, arrivages, ouverture des ventes à quai : toutes les infos en temps réel sur Facebook.</p>
+      <div class="follow-cta">
+        <a href="#" class="follow-fb" data-facebook aria-label="Rejoignez-nous sur Facebook">
+          <span class="follow-fb-ring"></span>
+          <svg viewBox="0 0 64 96" class="follow-fb-f" fill="#fff" aria-hidden="true"><path d="M37 96 V46 H50 V33 H37 V27 C37 21 40 19 47 19 H51 V6 C48 6 44 5 39 5 C28 5 22 12 22 25 V33 H12 V46 H22 V96 Z"></path></svg>
+        </a>
+        <span class="follow-arrow" aria-hidden="true">→</span>
+        <a href="#" class="follow-join" data-facebook>Rejoignez-nous !</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="foot-name">M'Alizé</span>
+        <span class="foot-sub">PÊCHE ARTISANALE</span>
+        <p class="foot-tagline">Pêche artisanale au casier en Côte d'Albâtre. Bulots, homards, bouquets et poissons de saison — vendus à quai et en circuit court.</p>
+        <a href="#" class="foot-fb" data-facebook><span>SUIVRE LES ARRIVAGES SUR FACEBOOK</span><span aria-hidden="true">↗</span></a>
+      </div>
+
+      <nav class="foot-col" aria-label="Pied de page">
+        <div class="foot-h">Navigation</div>
+        <a href="#accueil">Accueil</a>
+        <a href="#histoire">Le bateau</a>
+        <a href="#produits">Nos produits</a>
+        <a href="#vente">Vente à quai</a>
+        <a href="#localisation">Où nous trouver</a>
+      </nav>
+
+      <div class="foot-col">
+        <div class="foot-h">Nos produits</div>
+        <span>Bulots vivants</span>
+        <span>Homards bleus</span>
+        <span>Bouquets vivants</span>
+        <span>Poissons de saison</span>
+      </div>
+
+      <div class="foot-col">
+        <div class="foot-h">Contact</div>
+        <a href="tel:+33622135713">06 22 13 57 13</a>
+        <a href="#" data-facebook>Page Facebook</a>
+        <span class="foot-ports">Dieppe · Fécamp ·<br>Saint-Valéry-en-Caux</span>
+        <span class="foot-muted">Vente à quai « Les Barrières »,<br>selon la météo &amp; les arrivages.</span>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>M'ALIZÉ&nbsp;·&nbsp;DP 695288&nbsp;·&nbsp;PÊCHE ARTISANALE CÔTE D'ALBÂTRE</span>
+      <span>© <span id="foot-year">2026</span> M'Alizé — Mentions légales</span>
+    </div>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
