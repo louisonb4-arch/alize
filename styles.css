@@ -342,6 +342,10 @@ a { text-decoration: none; color: inherit; }
   .follow-join { font-size: 30px; }
 }
 
+@media (max-width: 560px) {
+  .hero-badge { display: none; }
+}
+
 @media (max-width: 460px) {
   .prod-cards { grid-template-columns: 1fr; }
   .hero-title { font-size: 56px; }
