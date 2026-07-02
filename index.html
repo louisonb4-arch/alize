@@ -3,13 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M'Alizé — Pêche artisanale · Côte d'Albâtre</title>
-  <meta name="description" content="M'Alizé, pêche artisanale en Côte d'Albâtre. Bulots vivants, bouquets et poissons de saison, pêchés et vendus à quai. Dieppe · Fécamp · Saint-Valéry-en-Caux selon arrivages." />
+  <title>M'Alizé — Vente directe de poisson à Dieppe | Bulots, homards, bouquets · Pêche artisanale</title>
+  <meta name="description" content="Bateau de pêche artisanale M'Alizé à Dieppe : vente directe à quai (Les Barrières) de bulots vivants, homards bleus, bouquets et poissons de saison. Pêche au casier en Côte d'Albâtre — Dieppe, Fécamp, Saint-Valéry-en-Caux. Livraison possible." />
+  <meta name="keywords" content="vente directe poisson Dieppe, bulots Dieppe, pêcheur Dieppe, vente à quai Dieppe, poisson frais Dieppe, homard bleu Normandie, bouquet crevette Dieppe, pêche artisanale Côte d'Albâtre, bateau M'Alizé, circuit court poisson Normandie, criée Dieppe, fruits de mer Fécamp, poissonnerie Saint-Valéry-en-Caux" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#021e29" />
-  <meta property="og:title" content="M'Alizé — La mer décide" />
-  <meta property="og:description" content="Pêche artisanale en Côte d'Albâtre. Pêchés ici, vendus ici, pour vous." />
-  <meta property="og:image" content="img/hero.png" />
+  <meta name="author" content="M'Alizé — Jérôme Féron, patron-pêcheur" />
+  <link rel="canonical" href="https://alize.vercel.app/" />
+
+  <!-- Géolocalisation (SEO local) -->
+  <meta name="geo.region" content="FR-76" />
+  <meta name="geo.placename" content="Dieppe, Normandie, France" />
+  <meta name="geo.position" content="49.9294;1.0836" />
+  <meta name="ICBM" content="49.9294, 1.0836" />
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="M'Alizé — Pêche artisanale" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://alize.vercel.app/" />
+  <meta property="og:title" content="M'Alizé — Vente directe de poisson à Dieppe · Bulots, homards, bouquets" />
+  <meta property="og:description" content="Pêche artisanale au casier en Côte d'Albâtre. Bulots vivants, homards bleus, bouquets et poissons de saison, vendus à quai à Dieppe dès le retour de mer." />
+  <meta property="og:image" content="https://alize.vercel.app/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Le bateau de pêche M'Alizé en mer au coucher du soleil" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="M'Alizé — Vente directe de poisson à Dieppe" />
+  <meta name="twitter:description" content="Bulots vivants, homards bleus, bouquets et poissons de saison — vendus à quai à Dieppe, pêche artisanale au casier en Côte d'Albâtre." />
+  <meta name="twitter:image" content="https://alize.vercel.app/img/og-image.jpg" />
+
+  <!-- Préchargement des visuels critiques (LCP) -->
+  <link rel="preload" as="image" href="img/hero.webp" media="(min-width: 761px)" />
+  <link rel="preload" as="image" href="img/hero-mobile.webp" media="(max-width: 760px)" />
+
+  <!-- Données structurées : commerce local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://alize.vercel.app/#business",
+    "name": "M'Alizé — Pêche artisanale",
+    "description": "Bateau de pêche artisanale basé à Dieppe. Vente directe à quai (secteur Les Barrières) de bulots vivants, homards bleus, bouquets et poissons de saison, pêchés au casier en Côte d'Albâtre. Livraison possible sur commande.",
+    "url": "https://alize.vercel.app/",
+    "telephone": "+33622135713",
+    "image": "https://alize.vercel.app/img/og-image.jpg",
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "founder": { "@type": "Person", "name": "Jérôme Féron", "jobTitle": "Patron-pêcheur" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Quai « Les Barrières », Port de Dieppe",
+      "addressLocality": "Dieppe",
+      "postalCode": "76200",
+      "addressRegion": "Normandie",
+      "addressCountry": "FR"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 49.9294, "longitude": 1.0836 },
+    "areaServed": [
+      { "@type": "City", "name": "Dieppe" },
+      { "@type": "City", "name": "Fécamp" },
+      { "@type": "City", "name": "Saint-Valéry-en-Caux" }
+    ],
+    "sameAs": ["https://www.facebook.com/p/Bateau-MAliz%C3%A9-100050654394732/"],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Bulots vivants", "description": "Bulots vivants pêchés au casier au large de Dieppe, vendus à la pesée." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Homards bleus", "description": "Homards bleus pêchés localement au casier." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Bouquets vivants", "description": "Crevettes roses et grises de la Manche." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Poissons de saison", "description": "Seiches et poissons côtiers selon les arrivages." } }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -92,7 +158,7 @@
     </div>
     <div class="prod-cards">
       <article class="pcard">
-        <img src="img/p_35_3.png" alt="Bulots vivants en gros plan" class="pcard-img" />
+        <img src="img/p_35_3.webp" alt="Bulots vivants en gros plan" class="pcard-img" />
         <div class="pcard-grad"></div>
         <div class="pcard-body">
           <div class="pcard-title">BULOTS<br>VIVANTS</div>
@@ -101,7 +167,7 @@
         </div>
       </article>
       <article class="pcard">
-        <img src="img/p_35_4.png" alt="Bouquets, crevettes roses" class="pcard-img" />
+        <img src="img/p_35_4.webp" alt="Bouquets, crevettes roses" class="pcard-img" />
         <div class="pcard-grad"></div>
         <div class="pcard-body">
           <div class="pcard-title">BOUQUETS<br>VIVANTS</div>
@@ -110,7 +176,7 @@
         </div>
       </article>
       <article class="pcard">
-        <img src="img/p_35_5.png" alt="Poissons de saison sur glace" class="pcard-img" />
+        <img src="img/p_35_5.webp" alt="Poissons de saison sur glace" class="pcard-img" />
         <div class="pcard-grad"></div>
         <div class="pcard-body">
           <div class="pcard-title">POISSONS<br>DE SAISON</div>
@@ -189,7 +255,7 @@
 
   <!-- ============ LOCALISATION (Côte d'Albâtre) ============ -->
   <section class="coast" id="localisation">
-    <img src="img/coast_bg2.png" alt="Vue aérienne de la Côte d'Albâtre" class="coast-bg" />
+    <img src="img/coast_bg2.webp" alt="Vue aérienne de la Côte d'Albâtre" class="coast-bg" />
 
     <svg class="coast-route" viewBox="0 0 1847 761" preserveAspectRatio="none" aria-hidden="true">
       <polyline points="150,655 610,575 1112,347" fill="none" stroke="#e8a830" stroke-width="2.4" stroke-dasharray="3 14" stroke-linecap="round"></polyline>

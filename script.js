@@ -3,7 +3,7 @@
    ========================================================= */
 
 // --- Lien Facebook centralisé : à renseigner une fois ici ---
-const FACEBOOK_URL = '#'; // ex: 'https://www.facebook.com/...'
+const FACEBOOK_URL = 'https://www.facebook.com/p/Bateau-MAliz%C3%A9-100050654394732/';
 
 document.querySelectorAll('[data-facebook]').forEach((el) => {
   if (FACEBOOK_URL && FACEBOOK_URL !== '#') {
