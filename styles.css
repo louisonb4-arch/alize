@@ -208,6 +208,7 @@ a { text-decoration: none; color: inherit; }
    Unités cqw = % de la largeur du bandeau (container-type:inline-size)
    ========================================================= */
 .coast { position: relative; container-type: inline-size; aspect-ratio: 1847/761; background: var(--coast-bg); color: #fff; overflow: hidden; }
+.coast-stage { position: absolute; inset: 0; }
 .coast-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .coast-route { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 
@@ -295,8 +296,8 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 760px) {
   .hero { min-height: 100svh;
-    background-image: linear-gradient(180deg, rgba(4,22,30,.55) 0%, rgba(4,22,30,.15) 22%, rgba(4,22,30,0) 45%, rgba(4,22,30,.35) 100%), url('img/hero-mobile.webp');
-    background-size: cover; background-position: center; background-repeat: no-repeat; }
+    background-image: linear-gradient(180deg, rgba(4,22,30,.62) 0%, rgba(4,22,30,.28) 26%, rgba(4,22,30,0) 48%, rgba(4,22,30,.3) 100%), url('img/hero-mobile.webp');
+    background-size: auto, auto 112%; background-position: center, center bottom; background-repeat: no-repeat; }
   .hero-bar { padding: 22px 24px 0; align-items: center; }
   .nav { display: none; }
   .burger { display: flex; }
@@ -337,21 +338,34 @@ a { text-decoration: none; color: inherit; }
   .story-side { padding: 0 24px 44px; }
   .sm-inner { grid-template-columns: 1fr; gap: 32px; }
 
-  .site-footer { padding: 40px 24px 0; }
-  .foot-top { grid-template-columns: 1fr 1fr; gap: 26px 20px; padding-bottom: 24px; }
+  .site-footer { padding: 36px 24px 0; }
+  .foot-top { grid-template-columns: 1fr 1fr; gap: 24px 18px; padding-bottom: 22px; }
   .foot-brand { grid-column: 1 / -1; max-width: 100%; }
-  .foot-name { font-size: 28px; }
-  .foot-tagline { font-size: 12.5px; margin-top: 12px; }
-  .foot-fb { margin-top: 16px; padding: 12px 16px; font-size: 10.5px; }
-  .foot-col { gap: 8px; }
-  .foot-h { margin-bottom: 2px; }
-  .foot-bottom { flex-direction: column; gap: 6px; padding: 16px 0 22px; font-size: 10px; }
+  .foot-name { font-size: 26px; }
+  .foot-tagline { display: none; }
+  nav.foot-col { display: none; } /* doublon du menu burger */
+  .foot-muted { display: none; }
+  .foot-fb { margin-top: 14px; padding: 12px 16px; font-size: 10.5px; }
+  .foot-col { gap: 7px; }
+  .foot-col a, .foot-col span { font-size: 13px; }
+  .foot-h { margin-bottom: 3px; font-size: 11px; }
+  .foot-bottom { flex-direction: column; gap: 4px; padding: 14px 0 20px; font-size: 9.5px; }
 
-  /* Coast : repli en flux vertical, pins/route masqués (calés sur l'image desktop) */
-  .coast { aspect-ratio: auto; container-type: normal; padding: 40px 24px; min-height: 0; }
-  .coast-bg { opacity: .5; }
-  .coast-route, .pin, .pin-ring, .port { display: none; }
-  .coast-head { position: relative; left: 0; top: 0; max-width: 100%; }
+  /* Coast : texte en flux + vraie carte (photo + pins) en bloc dédié */
+  .coast { aspect-ratio: auto; container-type: normal; padding: 40px 24px; min-height: 0; display: flex; flex-direction: column; }
+  .coast-head { position: relative; left: 0; top: 0; max-width: 100%; order: 1; }
+  .coast-stage { position: relative; inset: auto; order: 2; aspect-ratio: 1847/761; margin-top: 26px; }
+  .coast-follow { order: 3; }
+  .coast-route polyline { stroke-width: 9; }
+  .pin-drop { width: 13px; height: 13px; box-shadow: 0 2px 6px rgba(0,0,0,.5); }
+  .pin-drop.big { width: 16px; height: 16px; }
+  .pin-dot { width: 5px; height: 5px; top: 3px; }
+  .pin-dot.big { width: 5px; height: 5px; top: 4px; }
+  .pin-ring { width: 20px; height: 8px; border-width: 1.5px; }
+  .port { font-size: 13px; line-height: .9; }
+  .port-dieppe { font-size: 14px; }
+  .port-underline { width: 34px; height: 2px; margin-top: 3px; }
+  .port-underline.center { width: 42px; margin-top: 4px; }
   .coast-script { font-size: 30px; }
   .coast-title { font-size: 40px; letter-spacing: .5px; }
   .coast-p { font-size: 14px; margin-top: 16px; }
