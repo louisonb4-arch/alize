@@ -4,6 +4,144 @@
    Recréation fidèle du handoff design_handoff_malize_site.
    ========================================================= */
 
+/* =========================================================
+   POLICES AUTO-HÉBERGÉES — SIL Open Font License 1.1
+   Anton · Oswald · Barlow · Cormorant Garamond · Caveat
+   Rapatriées depuis Google Fonts le 17 juillet 2026 : plus aucune
+   requête vers les serveurs de polices de Google, donc plus aucune
+   IP de visiteur transmise à Google sans consentement.
+   Sous-ensembles latin + latin-ext uniquement (site francophone).
+   ========================================================= */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('img/font/anton-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('img/font/anton-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('img/font/oswald-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('img/font/oswald-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('img/font/barlow-normal-latin-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('img/font/barlow-normal-latin-500.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('img/font/barlow-normal-latin-600.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('img/font/barlow-normal-latin-ext-400.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('img/font/barlow-normal-latin-ext-500.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('img/font/barlow-normal-latin-ext-600.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('img/font/cormorant-garamond-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('img/font/cormorant-garamond-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('img/font/cormorant-garamond-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('img/font/cormorant-garamond-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('img/font/caveat-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('img/font/caveat-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+
 :root {
   --bg: #021e29;
   --coast-bg: #001f2f;
@@ -419,7 +557,59 @@ a { text-decoration: none; color: inherit; }
 
 .legal-note { margin-top: 60px; padding: 20px 22px; background: rgba(240,176,58,.06); border: 1px solid rgba(240,176,58,.2); font-size: 13px; line-height: 1.6; color: #9fb0b3; font-style: italic; }
 
+/* Fiche d'identité de l'éditeur — lignes pointillées, comme un registre de bord */
+.legal-id { margin: 22px 0 8px; display: flex; flex-direction: column; gap: 2px; }
+.legal-id li { display: flex; align-items: baseline; gap: 10px; padding: 8px 0; font-size: 15px; line-height: 1.6; color: #bcccce; }
+.legal-id li::before { content: none; }
+.legal-id .k { font-family: 'Oswald', sans-serif; font-size: 11.5px; letter-spacing: 1.5px; text-transform: uppercase; color: #8fa6ab; white-space: nowrap; }
+.legal-id .lead {
+  flex: 1; min-width: 18px; align-self: center; height: 2px;
+  background-image: radial-gradient(circle, rgba(255,255,255,.28) 1px, transparent 1px);
+  background-size: 5px 2px; background-repeat: repeat-x; background-position: 0 center;
+  transform: translateY(2px);
+}
+.legal-id .v { text-align: right; color: #e9e4d8; font-weight: 500; }
+.legal-id .v a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+
+/* Encadré « d'où viennent ces données » — la source, pas la parole */
+.legal-source {
+  margin-top: 26px; padding: 18px 20px;
+  background: rgba(31,111,134,.14); border-left: 2px solid var(--accent);
+  font-size: 13.5px; line-height: 1.7; color: #a8bcc0;
+}
+.legal-source strong { color: #e9e4d8; font-weight: 600; }
+.legal-source a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+.legal-source code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; color: #cfd6d4; }
+
+/* Séparateur — trois flotteurs de casier */
+.legal-sep { margin: 54px 0 0; text-align: center; color: var(--gold); letter-spacing: 1.1em; font-size: 11px; opacity: .55; }
+
+/* Trou assumé : ce qui n'a pas pu être vérifié se voit. Rose = signal, pas couleur de marque. */
+.manque {
+  background: #FFD9E2; color: #7A0B26;
+  padding: 1px 7px; border-radius: 2px;
+  font-weight: 500; font-size: .94em;
+  box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+
+/* Boutons de fin de page */
+.legal-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 60px; }
+.legal-btn {
+  display: inline-flex; align-items: center; padding: 14px 22px;
+  font-family: 'Oswald', sans-serif; font-size: 11.5px; letter-spacing: 2px; text-transform: uppercase;
+  border: 1px solid var(--gold); color: var(--bg); background: var(--gold);
+  transition: background .2s ease, color .2s ease;
+}
+.legal-btn:hover { background: transparent; color: var(--gold); }
+.legal-btn.ghost { background: transparent; color: #e9e4d8; border-color: rgba(255,255,255,.28); }
+.legal-btn.ghost:hover { border-color: var(--gold); color: var(--gold); }
+.legal-btn:focus-visible, .legal-back:focus-visible, .legal-p a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
 @media (max-width: 560px) {
   .legal-section { margin-top: 40px; padding-top: 26px; }
   .legal-title { font-size: 34px; }
+  .legal-id li { flex-direction: column; align-items: flex-start; gap: 3px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+  .legal-id .lead { display: none; }
+  .legal-id .v { text-align: left; }
+  .legal-actions .legal-btn { flex: 1 1 100%; justify-content: center; }
 }
