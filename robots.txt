@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alize.vercel.app/sitemap.xml
+Sitemap: https://alize-six.vercel.app/sitemap.xml
