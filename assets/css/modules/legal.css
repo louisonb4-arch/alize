@@ -1,0 +1,64 @@
+/* Pages légales — la craie, une colonne de lecture, l'immatriculation en tête */
+.legal-page .site-header { position: relative; border-top: 0; }
+.legal-back { text-decoration: none; padding-block: .8rem; }
+.legal-back:hover { color: var(--coque-txt); }
+
+.legal-main { padding: clamp(3rem, 8vw, 7rem) var(--gutter) clamp(4rem, 8vw, 7rem); }
+.legal-wrap { max-width: 46rem; margin-inline: auto; }
+
+.legal-kicker {
+  font-family: var(--font-hull); font-weight: 700; font-size: .9rem;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--coque-txt);
+  margin-bottom: 1rem;
+}
+.legal-title { font-family: var(--font-hull); font-weight: 900; text-transform: uppercase; font-size: clamp(3rem, 9vw, 6rem); line-height: .88; }
+.legal-updated { margin-top: 1.25rem; color: var(--encre-2); font-size: .95rem; }
+.legal-intro { font-size: clamp(1.1rem, 1rem + .4vw, 1.3rem); line-height: 1.5; margin-bottom: 2rem; }
+
+.legal-section { padding-top: 2.5rem; margin-top: 2.5rem; border-top: 3px solid var(--encre); }
+.legal-h {
+  display: flex; align-items: baseline; gap: 1rem;
+  font-family: var(--font-hull); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1; margin-bottom: 1.25rem;
+}
+.legal-h span { font-family: var(--font-crate); color: var(--coque-txt); font-size: .75em; }
+.legal-p, .legal-list li { max-width: 42rem; }
+.legal-list { padding-left: 1.2rem; margin: 0 0 1em; }
+.legal-list li { margin-bottom: .5em; }
+.legal-p a, .legal-list a, .legal-source a, .legal-id a {
+  text-decoration: underline; text-decoration-color: var(--liston); text-decoration-thickness: 2px; text-underline-offset: .2em;
+}
+
+/* Fiche d'identité en pointillés, comme une plaque */
+.legal-id { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+.legal-id li { display: flex; align-items: baseline; gap: .6rem; padding: .45rem 0; }
+.legal-id .k { color: var(--encre-2); white-space: nowrap; }
+.legal-id .lead { flex: 1; min-width: 1rem; border-bottom: 1px dotted rgba(13, 37, 41, .35); translate: 0 -.3em; }
+.legal-id .v { font-weight: 600; text-align: right; }
+
+.legal-source {
+  margin: 1.5rem 0; padding: 1.25rem 1.4rem;
+  background: var(--cabine); border-left: 6px solid var(--coque);
+  font-size: .95rem;
+}
+.manque { background: #F6DFA6; color: var(--encre); padding: 0 .25em; font-weight: 600; }
+.legal-sep { text-align: center; letter-spacing: .6em; color: var(--coque-txt); margin-top: 3rem; }
+
+.legal-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 3.5rem; }
+.legal-btn {
+  display: inline-flex; align-items: center; min-height: 48px; padding: .8em 1.4em .75em;
+  background: var(--encre); color: var(--cabine);
+  font-family: var(--font-hull); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; text-decoration: none;
+}
+.legal-btn.ghost { background: transparent; color: var(--encre); box-shadow: inset 0 0 0 2px var(--encre); }
+
+.legal-foot { background: var(--coque); color: var(--encre); padding-block: 1.25rem; font-size: .9rem; }
+.legal-foot__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem; }
+.legal-foot nav { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; }
+.legal-foot a { text-underline-offset: .2em; padding-block: .6rem; }
+
+@media (max-width: 560px) {
+  .legal-id li { flex-wrap: wrap; gap: .1rem .6rem; }
+  .legal-id .lead { display: none; }
+  .legal-id .v { text-align: left; width: 100%; }
+}

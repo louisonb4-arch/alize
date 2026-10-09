@@ -1,0 +1,116 @@
+/* HERO — le flanc du bateau.
+   Haut : la photo (le bateau en mer). Le liston jaune coupe l'écran.
+   Bas : la coque turquoise, le nom peint en grand, l'immatriculation. */
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  min-height: calc(100svh - 68px);
+  background: var(--coque);
+  isolation: isolate;
+}
+
+.hero__photo { position: relative; min-height: 34svh; overflow: hidden; background: var(--manche-2); }
+.hero__photo > picture { position: absolute; inset: 0; display: block; }
+.hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 72%; }
+
+.hero__liston { position: relative; z-index: 2; }
+
+/* La coque — tôles d'alu soudées : joints verticaux très discrets */
+.hero__hull {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "reg   reg"
+    "name  side"
+    "coords coords";
+  column-gap: clamp(1.5rem, 4vw, 5rem);
+  align-items: end;
+  padding: clamp(.75rem, 1.6vw, 1.5rem) var(--gutter) clamp(2.75rem, 4.5vw, 4rem);
+  color: var(--encre);
+  background:
+    repeating-linear-gradient(90deg, transparent 0 calc(25% - 1px), rgba(13, 37, 41, .07) calc(25% - 1px) 25%),
+    var(--coque);
+}
+
+.hero__reg {
+  grid-area: reg;
+  margin: 0 0 .25rem;
+  font-family: var(--font-hull); font-weight: 800;
+  font-size: clamp(1.1rem, 1.6vw, 1.6rem);
+  letter-spacing: .18em;
+  color: var(--cabine);
+}
+
+.hero__title { grid-area: name; margin: 0; }
+.hero__name {
+  display: block;
+  font-size: min(21vw, 31svh);
+  line-height: .78;
+  color: var(--cabine);
+  letter-spacing: -.01em;
+  margin-left: -.03em;
+}
+
+.hero__side { grid-area: side; max-width: 34rem; padding-bottom: .4rem; }
+.hero__slogan {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
+  line-height: .92;
+  color: var(--encre);
+}
+.hero__lede { max-width: 30rem; margin-bottom: 1.4rem; }
+.hero__actions .cta { background: var(--encre); color: var(--cabine); }
+.hero__actions .cta:hover { background: var(--manche); }
+
+.hero__coords {
+  grid-area: coords;
+  display: flex; justify-content: space-between; gap: 1rem;
+  margin: clamp(1rem, 2vw, 1.75rem) 0 0;
+  padding-top: .75rem;
+  border-top: 2px solid rgba(13, 37, 41, .35);
+  font-size: .85rem;
+}
+
+/* Flottaison : deux houles en décalage de phase, la Manche commence dessous */
+.hero__waterline {
+  position: absolute; left: 0; right: 0; bottom: -1px; height: clamp(18px, 2.4vw, 34px);
+  overflow: hidden; z-index: 3; pointer-events: none;
+}
+.hero__swell { position: absolute; bottom: 0; left: 0; width: 200%; height: 100%; }
+.hero__swell path { fill: var(--manche); }
+.hero__swell--back path { fill: var(--manche); opacity: .45; }
+.hero__swell--back { animation: swell 14s linear infinite; }
+.hero__swell--front { animation: swell 9s linear infinite reverse; }
+@keyframes swell { to { translate: -50% 0; } }
+
+/* Ouverture : le liston d'abord, puis le nom sort de la coque */
+.hero [data-reveal="liston"] { --self-delay: 0ms; }
+.hero [data-split] { --self-delay: 250ms; --word-stagger: 0ms; }
+.hero [data-reveal="tide"] { --self-delay: 0ms; }
+.hero__side [data-reveal], .hero__side[data-reveal] { --self-delay: 600ms; }
+.hero__side > [data-reveal] { --self-delay: 600ms; }
+
+@media (max-width: 1100px) {
+  .hero__hull {
+    grid-template-columns: 1fr;
+    grid-template-areas: "reg" "name" "side" "coords";
+  }
+  .hero__name { font-size: min(27vw, 24svh); }
+  .hero__side { padding-top: 1.25rem; max-width: 40rem; }
+}
+
+@media (max-width: 760px) {
+  .hero { min-height: calc(100svh - 60px); grid-template-rows: minmax(30svh, 1fr) auto auto; }
+  .hero__photo img { object-position: 50% 78%; }
+  .hero__hull {
+    padding-top: .5rem;
+    background: var(--coque);
+  }
+  .hero__name { font-size: 29vw; line-height: .8; }
+  .hero__slogan { font-size: clamp(1.9rem, 9vw, 2.4rem); margin-bottom: .75rem; }
+  .hero__lede { font-size: 1rem; margin-bottom: 1.1rem; }
+  .hero__coords span:last-child { display: none; }
+}

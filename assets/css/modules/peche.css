@@ -1,0 +1,102 @@
+/* LA PÊCHE — sur la craie. Chaque produit est marqué comme une caisse de criée. */
+.peche { padding-block: clamp(5rem, 11vw, 11rem); background: var(--craie); }
+
+.peche__head {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  grid-template-areas: "kicker kicker" "title title" ". intro";
+  gap: 0 clamp(2rem, 6vw, 7rem);
+  align-items: end;
+  margin-bottom: clamp(3rem, 7vw, 7rem);
+}
+.peche__kicker { grid-area: kicker; color: var(--coque-txt); margin-bottom: 1.25rem; }
+.peche__title { grid-area: title; font-size: clamp(3.4rem, 9vw, 10rem); color: var(--encre); margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.peche__intro { grid-area: intro; max-width: 34rem; }
+.peche__intro p:last-child { margin-bottom: .3em; color: var(--encre-2); }
+
+.peche__body {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(2rem, 6vw, 7rem);
+  align-items: start;
+}
+
+.crates { margin: 0; padding: 0; list-style: none; border-top: 3px solid var(--encre); }
+.crate {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) auto;
+  grid-template-areas: "n name mark" "n desc mark";
+  column-gap: 1.25rem;
+  padding: clamp(1.25rem, 2.2vw, 2rem) 0;
+  border-bottom: 1px solid var(--silex);
+  cursor: default;
+}
+.crate__n { grid-area: n; font-size: 2rem; color: var(--coque-txt); padding-top: .35rem; }
+.crate__name {
+  grid-area: name;
+  font-size: clamp(2.4rem, 4.4vw, 4.8rem);
+  color: var(--encre);
+  transition: color var(--dur-fast) linear;
+}
+.crate__desc { grid-area: desc; margin: .6rem 0 0; max-width: 32rem; color: var(--encre-2); }
+.crate__mark {
+  grid-area: mark; align-self: start;
+  margin-top: .8rem;
+  padding: .3rem .55rem .25rem;
+  border: 2px solid currentColor;
+  font-size: .75rem; color: var(--encre-2);
+  white-space: nowrap;
+}
+.crate__thumb { display: none; }
+
+.crate.is-active .crate__name { color: var(--coque-txt); }
+
+/* Aperçu : un seul cadre collant, l'image change au survol */
+.peche__preview { position: sticky; top: calc(68px + 2rem); }
+.peche__preview-frame { position: relative; }
+.peche__preview-stack { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: var(--manche); }
+.peche__preview-stack img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0;
+  transition: opacity 500ms var(--ease-io);
+}
+.peche__preview-stack img.is-active { opacity: 1; }
+
+.extra {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: 1rem clamp(2rem, 6vw, 7rem);
+  margin-top: clamp(4rem, 8vw, 8rem);
+  padding-top: 1.5rem;
+  border-top: 3px solid var(--encre);
+}
+.extra__title { margin: 0; color: var(--coque-txt); }
+.extra__list { margin: 0; padding: 0; list-style: none; }
+.extra__list li { padding: .7rem 0; border-bottom: 1px solid var(--silex); }
+.extra__list strong { font-weight: 600; }
+.extra__note { grid-column: 2; margin: .75rem 0 0; color: var(--encre-2); }
+
+@media (max-width: 960px) {
+  .peche__head { grid-template-columns: 1fr; grid-template-areas: "kicker" "title" "intro"; }
+  .peche__title { margin-bottom: 1.5rem; }
+  .peche__body { grid-template-columns: 1fr; }
+  .peche__preview { display: none; }
+  .crate {
+    grid-template-columns: 2.6rem minmax(0, 1fr) 34%;
+    grid-template-areas: "n name thumb" "n desc thumb" "n mark thumb";
+    column-gap: .9rem;
+  }
+  .crate__n { font-size: 1.4rem; padding-top: .2rem; }
+  .crate__mark { justify-self: start; margin-top: .75rem; }
+  .crate__thumb {
+    display: block; grid-area: thumb; align-self: start;
+    width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
+  }
+  .extra { grid-template-columns: 1fr; }
+  .extra__note { grid-column: 1; }
+}
+@media (max-width: 480px) {
+  .crate__name { font-size: clamp(2rem, 10vw, 2.6rem); }
+  .crate__desc { font-size: .95rem; }
+}

@@ -1,0 +1,52 @@
+/* BULLETIN — sous la flottaison. La vente suit la mer, pas une grille horaire. */
+.bulletin {
+  background: var(--manche);
+  color: var(--cabine);
+  padding-block: clamp(5rem, 11vw, 11rem) clamp(5rem, 10vw, 10rem);
+}
+.bulletin__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  grid-template-areas: "head head" "text photo";
+  gap: clamp(2.5rem, 5vw, 5rem) clamp(2rem, 6vw, 7rem);
+  align-items: start;
+}
+.bulletin__head { grid-area: head; }
+.bulletin__text { grid-area: text; }
+.bulletin__kicker { color: var(--liston); margin-bottom: 1.5rem; }
+.bulletin__title {
+  font-size: clamp(3.4rem, 10.5vw, 11rem);
+  color: var(--cabine);
+}
+.bulletin__lede { max-width: 36rem; font-size: clamp(1.1rem, 1rem + .4vw, 1.3rem); color: rgba(245, 245, 240, .88); }
+
+/* Livre de bord : lignes réglées comme un cahier de bord */
+.logbook { margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0; list-style: none; max-width: 44rem; }
+.logbook__row {
+  display: grid;
+  grid-template-columns: 3.2rem 8.5rem 1fr;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0 .9rem;
+  border-top: 1px solid rgba(245, 245, 240, .22);
+}
+.logbook__row:last-child { border-bottom: 1px solid rgba(245, 245, 240, .22); }
+.logbook__n { font-size: 1.6rem; color: var(--liston); line-height: 1; }
+.logbook__k { color: var(--cabine); }
+.logbook__v { color: rgba(245, 245, 240, .88); }
+
+.bulletin__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-top: clamp(2rem, 4vw, 3rem); }
+.bulletin__phone { margin: 0; color: rgba(245, 245, 240, .88); }
+.bulletin__phone a { color: var(--cabine); white-space: nowrap; }
+
+/* Photo à fond perdu à droite, en face du livre de bord */
+.bulletin__photo { grid-area: photo; margin: 0; margin-right: calc(var(--gutter) * -1); }
+.bulletin__photo img { width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover; object-position: 38% 50%; }
+
+@media (max-width: 860px) {
+  .bulletin__inner { grid-template-columns: 1fr; grid-template-areas: "head" "photo" "text"; }
+  .bulletin__photo { width: 86%; margin-left: auto; }
+  .bulletin__photo img { aspect-ratio: 4 / 3; }
+  .logbook__row { grid-template-columns: 2.4rem 1fr; row-gap: .15rem; }
+  .logbook__v { grid-column: 2; }
+}

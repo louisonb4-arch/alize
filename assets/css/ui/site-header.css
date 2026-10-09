@@ -1,0 +1,71 @@
+/* Header = timonerie : blanc de cabine sous un bandeau de toit jaune */
+.site-loader { position: fixed; inset: 0; z-index: 999; background: var(--cabine); opacity: 1; pointer-events: none; }
+.site-loader.--js-ready { opacity: 0; transition: opacity var(--dur-fast) linear; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-3);
+  height: 68px;
+  padding-inline: var(--gutter);
+  background: var(--cabine);
+  border-top: 6px solid var(--liston);
+  color: var(--encre);
+}
+.site-header__mark { display: flex; align-items: baseline; gap: .9rem; text-decoration: none; }
+.site-header__name { font-size: 2rem; line-height: 1; color: var(--coque-txt); }
+.site-header__reg { font-size: .8rem; color: var(--encre-2); }
+
+.site-header__nav { display: flex; align-items: center; gap: var(--s-3); }
+.site-header__nav ul { display: flex; gap: var(--s-3); margin: 0; padding: 0; list-style: none; }
+.site-header__nav ul a {
+  font-family: var(--font-hull); font-weight: 700; font-size: 1.1rem;
+  letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+  padding-block: .6rem;
+  background: linear-gradient(var(--liston), var(--liston)) left bottom / 0 3px no-repeat;
+  transition: background-size var(--dur-fast) var(--ease-out);
+}
+.site-header__nav ul a:hover { background-size: 100% 3px; }
+.site-header__cta { font-size: 1rem; min-height: 44px; padding: .7em 1.1em .65em; }
+
+.site-header__toggle { display: none; }
+
+@media (max-width: 900px) {
+  .site-header { height: 60px; }
+  .site-header__name { font-size: 1.75rem; }
+  .site-header__toggle {
+    display: grid; place-items: center;
+    width: 48px; height: 48px; margin-right: -10px;
+    background: none; border: 0; color: inherit; cursor: pointer;
+  }
+  .site-header__bars, .site-header__bars::before, .site-header__bars::after {
+    display: block; width: 26px; height: 3px; background: currentColor; content: "";
+    transition: translate var(--dur-fast) var(--ease-out), rotate var(--dur-fast) var(--ease-out), opacity var(--dur-fast) linear;
+  }
+  .site-header__bars { position: relative; }
+  .site-header__bars::before { position: absolute; translate: 0 -8px; }
+  .site-header__bars::after { position: absolute; translate: 0 8px; }
+  .site-header.is-open .site-header__bars { background: transparent; }
+  .site-header.is-open .site-header__bars::before { translate: 0 0; rotate: 45deg; }
+  .site-header.is-open .site-header__bars::after { translate: 0 0; rotate: -45deg; }
+
+  .site-header__nav {
+    position: fixed; inset: 60px 0 auto 0; height: calc(100dvh - 60px);
+    flex-direction: column; align-items: flex-start; justify-content: space-between;
+    padding: var(--s-3) var(--gutter) var(--s-4);
+    background: var(--coque);
+    visibility: hidden; opacity: 0;
+    transition: opacity var(--dur-fast) linear, visibility 0s linear var(--dur-fast);
+  }
+  .site-header.is-open .site-header__nav { visibility: visible; opacity: 1; transition: opacity var(--dur-fast) linear; }
+  .site-header__nav ul { flex-direction: column; gap: 0; width: 100%; }
+  .site-header__nav ul a {
+    display: block; padding: .35rem 0;
+    font-size: clamp(2.5rem, 13vw, 4rem); font-weight: 900; letter-spacing: 0; line-height: 1;
+    color: var(--cabine); background: none;
+  }
+  .site-header__cta { font-size: 1.15rem; min-height: 52px; }
+}
+
+@media (max-width: 380px) {
+  .site-header__reg { display: none; }
+}

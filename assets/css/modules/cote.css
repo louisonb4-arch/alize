@@ -1,0 +1,33 @@
+/* LA CÔTE — la Manche de nuit, l'écume le long des falaises, trois ports */
+.cote {
+  position: relative;
+  color: var(--cabine);
+  background: var(--manche-2) url("/assets/img/cote.webp") center 70% / cover no-repeat;
+  padding-block: clamp(5rem, 11vw, 11rem) clamp(3rem, 6vw, 6rem);
+}
+.cote__kicker { color: var(--liston); margin-bottom: 1.25rem; }
+.cote__title { font-size: clamp(3.2rem, 8.5vw, 9rem); }
+.cote__lede { max-width: 36rem; margin-top: 2rem; color: rgba(245, 245, 240, .9); font-size: clamp(1.05rem, 1rem + .3vw, 1.25rem); }
+
+.ports {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: clamp(4rem, 10vw, 10rem) 0 0; padding: 0; list-style: none;
+  border-top: 1px solid rgba(245, 245, 240, .3);
+}
+.port {
+  display: flex; flex-direction: column; gap: .7rem;
+  padding: 1.25rem 1.5rem 1.75rem 0;
+}
+.port + .port { padding-left: 1.5rem; border-left: 1px solid rgba(245, 245, 240, .3); }
+.port__coords { font-size: .8rem; color: rgba(245, 245, 240, .78); }
+.port__name { font-size: clamp(2.2rem, 4.4vw, 4.6rem); line-height: .9; }
+.port__note { color: rgba(245, 245, 240, .82); font-size: .95rem; }
+.port--home .port__name { color: var(--liston); }
+.port--home .port__note { color: var(--cabine); }
+.cote__liston { margin-top: 0; }
+
+@media (max-width: 900px) {
+  .ports { grid-template-columns: 1fr; }
+  .port, .port + .port { padding: 1.1rem 0 1.3rem; border-left: 0; border-bottom: 1px solid rgba(245, 245, 240, .3); }
+  .port__name br, .cote__title br { display: none; }
+}

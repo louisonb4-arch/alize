@@ -1,0 +1,92 @@
+/* =========================================================================
+   Motion — vocabulaire « marée »
+   · flot     : les images se découvrent par le bas, comme l'eau qui monte
+                (clip-path inset, lent, ease-io — jamais de scale)
+   · lettrage : les titres sortent de la ligne de flottaison (masque par mot)
+   · liston   : la bande jaune s'étire de gauche à droite
+   · houle    : la flottaison du hero ondule, décalage de phase lent
+   ========================================================================= */
+
+:root {
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-tide: cubic-bezier(0.45, 0, 0.2, 1);
+  --dur-fast: 250ms;
+  --dur-base: 650ms;
+  --dur-slow: 1000ms;
+  --dur-tide: 1400ms;
+}
+@media (max-width: 768px) {
+  :root { --dur-base: 450ms; --dur-slow: 700ms; --dur-tide: 950ms; }
+}
+
+[data-module-delay] { --module-delay: 0ms; }
+[data-reveal], [data-split] {
+  --column-delay: 0ms;
+  --self-delay: 0ms;
+  --local-offset: 0ms;
+  --index: 0;
+  --stagger: 0ms;
+  --delay: calc(var(--module-delay, 0ms) + var(--column-delay) + var(--self-delay)
+    + var(--index) * var(--stagger) + var(--local-offset));
+}
+
+@keyframes v-fade { from { opacity: 0; } }
+@keyframes v-translate { from { translate: var(--tx, 0px) var(--ty, 0px); } }
+@keyframes v-scaleX { from { scale: var(--sx, 0) 1; } }
+@keyframes v-tide {
+  from { clip-path: inset(100% 0 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+/* Par défaut : léger glissement */
+html.--js-inview-enabled [data-reveal] {
+  --ty: 1.25rem;
+  animation:
+    v-translate var(--dur-base, 650ms) var(--ease-out, ease) var(--delay, 0ms) backwards,
+    v-fade var(--dur-base, 650ms) linear var(--delay, 0ms) backwards;
+  animation-play-state: paused, paused;
+}
+html.--js-inview-enabled [data-reveal].is-inview { animation-play-state: running, running; }
+
+/* Flot : l'image se découvre par le bas. Le clip est sur l'enfant,
+   le parent (observé) reste visible pour l'IntersectionObserver. */
+html.--js-inview-enabled [data-reveal="tide"] { animation: none; }
+html.--js-inview-enabled [data-reveal="tide"] > * {
+  animation: v-tide var(--dur-tide, 1400ms) var(--ease-tide, ease) var(--delay, 0ms) backwards;
+  animation-play-state: paused;
+}
+html.--js-inview-enabled [data-reveal="tide"].is-inview > * { animation-play-state: running; }
+
+/* Liston qui s'étire */
+html.--js-inview-enabled [data-reveal="liston"] {
+  transform-origin: left center;
+  animation: v-scaleX var(--dur-slow, 1000ms) var(--ease-io, ease) var(--delay, 0ms) backwards;
+  animation-play-state: paused;
+}
+html.--js-inview-enabled [data-reveal="liston"].is-inview { animation-play-state: running; }
+
+/* Lettrage — masque par mot */
+.word { display: inline-block; overflow: hidden; vertical-align: top; padding: .2em 0 .04em; margin: -.2em 0 -.04em; }
+/* padding haut : les capitales accentuées (É, Ô…) dépassent la hauteur de ligne serrée */
+.word__inner { display: inline-block; }
+html.--js-inview-enabled [data-split] .word__inner {
+  --ty: 105%;
+  animation: v-translate var(--dur-slow, 1000ms) var(--ease-out, ease)
+    calc(var(--delay, 0ms) + var(--word-index, 0) * var(--word-stagger, 70ms)) backwards;
+  animation-play-state: paused;
+}
+html.--js-inview-enabled [data-split].is-inview .word__inner { animation-play-state: running; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html [data-reveal], html [data-reveal] > *, html [data-split] .word__inner {
+    animation: none !important; opacity: 1 !important; translate: none !important;
+    clip-path: none !important; scale: none !important;
+  }
+}

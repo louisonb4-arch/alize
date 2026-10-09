@@ -1,0 +1,39 @@
+/* LE BATEAU — la fiche technique peinte sur la coque turquoise */
+.bateau { background: var(--coque); color: var(--encre); }
+.bateau__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(2rem, 6vw, 7rem);
+  padding-block: clamp(4rem, 9vw, 9rem);
+  align-items: start;
+}
+.bateau__photo { margin: 0; margin-left: calc(var(--gutter) * -1); }
+.bateau__photo img { width: 100%; aspect-ratio: 4 / 3.4; object-fit: cover; object-position: 60% 50%; }
+
+.bateau__kicker { margin-bottom: 1.25rem; }
+.bateau__title { font-size: clamp(2.8rem, 4.6vw, 5.4rem); margin-bottom: 2rem; }
+.bateau__text p { max-width: 34rem; }
+
+.plate { margin: clamp(2rem, 4vw, 3rem) 0 0; border-top: 3px solid var(--encre); }
+.plate__row {
+  display: grid; grid-template-columns: minmax(9rem, 1fr) 1.2fr; gap: 1rem;
+  align-items: baseline;
+  padding: .8rem 0 .7rem;
+  border-bottom: 1px solid rgba(13, 37, 41, .3);
+}
+.plate dt { font-size: .85rem; }
+.plate dd {
+  margin: 0;
+  font-family: var(--font-hull); font-weight: 800; font-size: clamp(1.4rem, 2vw, 1.9rem);
+  line-height: 1; text-transform: uppercase;
+}
+.plate sup { font-size: .5em; }
+
+@media (max-width: 760px) {
+  .bateau__title br { display: none; }
+}
+@media (max-width: 900px) {
+  .bateau__inner { grid-template-columns: 1fr; padding-top: 0; }
+  .bateau__photo { margin-inline: calc(var(--gutter) * -1); }
+  .bateau__photo img { aspect-ratio: 4 / 3; }
+}

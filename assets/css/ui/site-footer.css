@@ -1,0 +1,48 @@
+/* Footer = timonerie : blanc cabine, toit jaune, le nom peint en turquoise */
+.site-footer { background: var(--cabine); color: var(--encre); overflow: hidden; }
+.site-footer__inner { padding-block: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 4vw, 3rem); }
+
+.site-footer__call {
+  display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.5rem 3rem;
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 3px solid var(--encre);
+}
+.site-footer__say { font-size: clamp(2.4rem, 5.5vw, 5.4rem); max-width: 16ch; }
+
+.site-footer__cols {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem;
+  padding-top: 2rem;
+}
+.site-footer__cols p { margin: 0; }
+.site-footer__label { color: var(--coque-txt); margin-bottom: .6rem !important; font-size: .85rem; }
+.site-footer__big {
+  font-family: var(--font-hull); font-weight: 800; font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1; text-decoration: none; white-space: nowrap;
+}
+.site-footer__big:hover { color: var(--coque-txt); }
+
+.site-footer__wordmark {
+  margin: 0; padding-inline: var(--gutter);
+  /* bord à bord : largeur dispo ÷ ratio largeur/corps du mot (mesuré : 3,03) */
+  font-size: calc((100vw - 2 * var(--gutter)) / 3.08); line-height: .74;
+  letter-spacing: -.01em;
+  color: var(--coque);
+  translate: 0 .08em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.site-footer__legal {
+  position: relative;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem;
+  padding-block: 1.1rem 1.4rem;
+  background: var(--coque);
+  max-width: none;
+  font-size: .9rem;
+}
+.site-footer__legal nav { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; }
+.site-footer__legal a { text-decoration: underline; text-underline-offset: .2em; padding-block: .6rem; }
+
+@media (max-width: 760px) {
+  .site-footer__cols { grid-template-columns: 1fr; gap: 1.5rem; }
+}
