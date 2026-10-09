@@ -11,7 +11,7 @@ Côte d'Albâtre (`#ECEDE6`), sections sombres = la Manche (`#0A3C43`).
 - Un seul CTA : « Prochaines ventes ↗ » → page Facebook (`FACEBOOK_URL` dans `assets/js/app.js`).
 
 ## Avant mise en ligne
-- Retirer `noindex` (meta des 3 pages + `X-Robots-Tag` dans `vercel.json`).
+- noindex retiré : site indexable.
 - Mentions légales : e-mail, hébergeur, crédits photo, vente à distance (cf. `LEGAL-TODO.md`).
 - Photos : rendus fournis par le client. Remplacer par de vraies photos du bateau dès que possible.
 - La v3 (`../malize-v3/`, dépôt `alize`) reste la version validée par le client tant que la v4 n'est pas choisie.
