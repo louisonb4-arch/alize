@@ -128,7 +128,7 @@ h1, h2, h3 { margin: 0; font-weight: 800; }
 
 /* CTA unique : « Prochaines ventes » */
 .cta {
-  display: inline-flex; align-items: center; gap: .75em;
+  display: inline-flex; align-items: center; justify-content: center;
   min-height: 48px;
   padding: .8em 1.4em .75em;
   background: var(--liston);
@@ -143,8 +143,6 @@ h1, h2, h3 { margin: 0; font-weight: 800; }
   transition: background-color var(--dur-fast, 250ms) linear;
 }
 .cta:hover { background: #E8B655; }
-.cta__arrow { display: inline-block; transition: translate var(--dur-fast, 250ms) var(--ease-out); }
-.cta:hover .cta__arrow { translate: 3px -3px; }
 
 .text-link {
   font-weight: 600;

@@ -104,7 +104,8 @@
 
 @media (max-width: 760px) {
   .hero { min-height: calc(100svh - 60px); grid-template-rows: minmax(30svh, 1fr) auto auto; }
-  .hero__photo img { object-position: 50% 78%; }
+  .hero__photo { min-height: 38svh; }
+  .hero__photo img { object-position: 50% 60%; }
   .hero__hull {
     padding-top: .5rem;
     background: var(--coque);
